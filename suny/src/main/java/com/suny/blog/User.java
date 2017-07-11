@@ -1,4 +1,4 @@
-package com.example.suny;
+package com.suny.blog;
 
 import lombok.Data;
 

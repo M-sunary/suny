@@ -1,4 +1,4 @@
-package com.example.suny;
+package com.suny.blog;
 
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,4 +41,5 @@ public class UserController {
         users.put(user.getUserId(),user);
         return "success";
     }
+
 }

@@ -24,6 +24,8 @@ ${AnsiColor.BRIGHT_RED}
 
 ==>> Application Version: ${application.version}${application.formatted-version}
 ==>> Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
-==>> Current Environment: ${application.spring.profiles.active}
+==>> Current Author's Blog : ${application.blog-name}
+==>> Blog's Url : ${blog-url}
+==>> Github's Url : ${github-url}
 
 ========================================================================================================
