@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>个人简历</title>
+<title>My Expirence Site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -14,9 +14,12 @@
 <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" /><!-- Pop-up -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!--fonts-->
-<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-<!--//fonts-->
+<!--<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700" rel="stylesheet">-->
+<!--<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">-->
+<link href="css/josefin.css" rel="stylesheet">
+<link href="css/lato.css" rel="stylesheet">
+
+
 
 </head>
 <body>
@@ -360,25 +363,52 @@
 
 
 		<div class="col-md-7 contact-map-right">
-		<!---<div id="map"></div>
-			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+		<div id="map"></div>
+			<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>-->
+			<!--<script type="text/javascript" src="js/google.map.js"></script>-->
+			<script src="http://maps.google.cn/maps/api/js?key=AIzaSyCqykMQE6pcU8qCOFaOhf2jBp11LVO1I5A"></script>
+			<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3411.2503229768495!2d121.48600885005544!3d31.241492967895745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xaff361c919711f26!2z5Lit5a6e5aSn5qW8!5e0!3m2!1szh-CN!2ssg!4v1500365202353" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
 			<script type="text/javascript">
 				google.maps.event.addDomListener(window, 'load', init);
 				function init() {
 					var mapOptions = {
 						zoom: 11,
-						center: new google.maps.LatLng(40.6700, -73.9400),
-						styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+						center: new google.maps.LatLng(31.246957,121.494107),
+						styles: [{"featureType":"all","elementType":"labels.text.fill",
+						"stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},
+						{"featureType":"all","elementType":"labels.text.stroke",
+						"stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},
+						{"featureType":"all","elementType":"labels.icon",
+						"stylers":[{"visibility":"off"}]},
+						{"featureType":"administrative","elementType":"geometry.fill",
+						"stylers":[{"color":"#000000"},{"lightness":20}]},
+						{"featureType":"administrative","elementType":"geometry.stroke",
+						"stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},
+						{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},
+						{"lightness":20}]},{"featureType":"poi","elementType":"geometry",
+						"stylers":[{"color":"#000000"},{"lightness":21}]},
+						{"featureType":"road.highway","elementType":"geometry.fill",
+						"stylers":[{"color":"#000000"},{"lightness":17}]},
+						{"featureType":"road.highway","elementType":"geometry.stroke",
+						"stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},
+						{"featureType":"road.arterial","elementType":"geometry",
+						"stylers":[{"color":"#000000"},{"lightness":18}]},
+						{"featureType":"road.local","elementType":"geometry",
+						"stylers":[{"color":"#000000"},{"lightness":16}]},
+						{"featureType":"transit","elementType":"geometry",
+						"stylers":[{"color":"#000000"},{"lightness":19}]},
+						{"featureType":"water","elementType":"geometry",
+						"stylers":[{"color":"#000000"},{"lightness":17}]}]
 					};
 					var mapElement = document.getElementById('map');
 					var map = new google.maps.Map(mapElement, mapOptions);
 					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(40.6700, -73.9400),
+						position: new google.maps.LatLng(31.246957,121.494107),
 						map: map,
 					});
 				}
-			</script>--->
-		<!-- //Map-JavaScript -->
+			</script>
+		<!-- Map-JavaScript -->
 
 		</div>
 			<div class="clearfix"></div>
