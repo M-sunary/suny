@@ -17,7 +17,7 @@ public class UserController {
     //创建线程安全的map
     static Map<Long,User> users = Collections.synchronizedMap(new HashMap<Long,User>());
 
-    @RequestMapping(value = "/user_list",method = RequestMethod.GET)
+    @RequestMapping(value = "/userList",method = RequestMethod.GET)
     public User getUserList(@RequestParam(value = "name") String name){
         // 处理"/users/"的GET请求，用来获取用户列表
         // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递
@@ -36,7 +36,7 @@ public class UserController {
         return us;
     }
 
-    @RequestMapping(value = "/new_user",method = RequestMethod.POST)
+    @RequestMapping(value = "/newUser",method = RequestMethod.POST)
     public String saveNewUser(User user){
         users.put(user.getUserId(),user);
         return "success";
