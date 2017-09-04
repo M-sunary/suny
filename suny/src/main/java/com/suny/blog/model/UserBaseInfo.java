@@ -20,7 +20,6 @@ public class UserBaseInfo {
     public UserBaseInfo(){}
 
     public UserBaseInfo(String userName){
-        this.userId = userId;
         this.userName = userName;
     };
 

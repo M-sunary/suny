@@ -1,7 +1,10 @@
 package com.suny.blog.service.impl;
 
+import com.suny.blog.controller.GlobalExceptionHandler;
 import com.suny.blog.model.UserBaseInfo;
 import com.suny.blog.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,6 +21,7 @@ import java.sql.SQLException;
 @Service
 public class UserServiceImpl implements UserService {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -43,7 +47,7 @@ public class UserServiceImpl implements UserService {
                 }
             });
         }catch (Exception e){
-            System.out.println("查询异常:"+e);
+            logger.error("查询异常:"+e);
         }
         return u;
     }

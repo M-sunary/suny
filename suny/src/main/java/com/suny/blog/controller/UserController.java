@@ -22,7 +22,7 @@ public class UserController {
     public UserBaseInfo getUserList(@RequestParam(value = "name") String name){
         // 处理"/users/"的GET请求，用来获取用户列表
         // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递
-//        users.put(1l,new UserBaseInfo(1l,"suny",27));
+        users.put(1,new UserBaseInfo(1,"suny"));
 //        users.put(2l,new User(2l,"臭臭",21));
 //        users.put(3l,new User(3l,"胖墩",24));
 //        users.put(4l,new User(4l,"龙虾",26));
