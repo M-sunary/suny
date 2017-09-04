@@ -1,4 +1,4 @@
-${AnsiColor.BRIGHT_RED}
+${AnsiColor.BLUE}
 =======================================================================================================
           _____                            _____                            _____                        _____                            _____
          /\    \                          /\    \                          /\    \                      |\    \                          /\    \
@@ -25,5 +25,8 @@ ${AnsiColor.BRIGHT_RED}
 ==>> Application Version: ${application.version}${application.formatted-version}
 ==>> Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
 ==>> Current Environment: ${spring.profiles.active}
+==>> Current Author's Blog : ${com.suny.blog.name}
+==>> Blog's Url : ${com.suny.blog.url}
+==>> Github's Url : ${com.suny.github.url}
 
 ========================================================================================================
