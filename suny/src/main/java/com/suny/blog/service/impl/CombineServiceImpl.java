@@ -45,6 +45,35 @@ public class CombineServiceImpl implements CombineService {
     }
 
     @Override
+    public List<Combine> getCombineListByType(int combineType) {
+        String sql = "";
+        if(combineType!=1){
+            sql = "select * from a_sir_combine WHERE combine_type = "+combineType;
+        }else{
+            sql = "select * from a_sir_combine ";
+        }
+        List<Combine> cmbList = new ArrayList<Combine>();
+        try {
+            List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql);
+            for (int i = 0; i < rows.size(); i++) {
+                Map<String,Object> cmbMap = rows.get(i);
+                Combine cmb = new Combine();
+                cmb.setId(Integer.valueOf(cmbMap.get("id")+""));
+                cmb.setContent(cmbMap.get("content").toString());
+                cmb.setName(cmbMap.get("name").toString());
+                cmb.setThumbUrl(cmbMap.get("thumb_url").toString());
+                cmb.setParams(cmbMap.get("params").toString());
+                cmb.setPrice(Float.valueOf(cmbMap.get("price").toString()));
+                cmb.setMemo(cmbMap.get("memo").toString());
+                cmbList.add(cmb);
+            }
+        }catch (DataAccessException e){
+            logger.error("查询异常",e);
+        }
+        return cmbList;
+    }
+
+    @Override
     public Combine getCombineById(int combineId) {
         return null;
     }

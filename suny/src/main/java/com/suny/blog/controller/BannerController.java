@@ -16,7 +16,7 @@ public class BannerController {
     @Autowired
     private BannerService bannerService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/lists", method = RequestMethod.GET)
     public List<Banner> getCMList(){
         List<Banner> bannerList = bannerService.getBannerList();
         return bannerList;

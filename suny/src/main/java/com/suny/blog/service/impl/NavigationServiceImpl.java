@@ -40,6 +40,26 @@ public class NavigationServiceImpl implements NavigationService {
     }
 
     @Override
+    public List<Navigation> getNavListsByType(Navigation navigation) {
+        String sql = "select * from a_sir_navigation WHERE nav_id = "+navigation.getNavId();
+        List<Navigation> navList = new ArrayList<Navigation>();
+        try {
+            List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql);
+            for (int i = 0; i < rows.size(); i++) {
+                Map<String,Object> navMap = rows.get(i);
+                Navigation nav = new Navigation();
+                nav.setNavId(Integer.parseInt(navMap.get("nav_id").toString()));
+                nav.setNavName(navMap.get("nav_name").toString());
+                nav.setNavShortName(navMap.get("nav_shortname").toString());
+                navList.add(nav);
+            }
+        }catch (DataAccessException e){
+            logger.error("查询异常",e);
+        }
+        return navList;
+    }
+
+    @Override
     public void updateNavigation(Navigation navigation) {
 
     }
