@@ -34,6 +34,14 @@ public class CombineController {
         }
         List<Combine> cmbList = combineService.getCombineListByType(combineType);
         return cmbList;
+    }
 
+    @RequestMapping(value = "/lists/detail/{combineId}", method = RequestMethod.POST)
+    public Combine getCombineDetail(@PathVariable int combineId) throws Exception{
+        if(StringUtils.isEmpty(combineId)){
+            throw new Exception("套餐类型不可为空");
+        }
+        Combine combine = combineService.getCombineById(combineId);
+        return combine;
     }
 }
