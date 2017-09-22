@@ -2,6 +2,8 @@ package com.suny.blog.controller;
 
 import com.suny.blog.model.Combine;
 import com.suny.blog.service.CombineService;
+import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +22,12 @@ public class CombineController {
     @Autowired
     private CombineService combineService;
 
+    private Logger logger = Logger.getLogger(CombineController.class);
+
     @RequestMapping(value = "/lists", method = RequestMethod.GET)
     public List<Combine> getCMList(){
         List<Combine> cmbList = combineService.getCombineList();
+        logger.info("current cmbList size : {} ");
         return cmbList;
 
     }
