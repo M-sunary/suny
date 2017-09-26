@@ -2,7 +2,7 @@ package com.suny.blog.controller;
 
 import com.suny.blog.model.Combine;
 import com.suny.blog.service.CombineService;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -22,7 +22,7 @@ public class CombineController {
     @Autowired
     private CombineService combineService;
 
-    private Logger logger = Logger.getLogger(CombineController.class);
+    private Logger logger = LoggerFactory.getLogger(CombineController.class);
 
     @RequestMapping(value = "/lists", method = RequestMethod.GET)
     public List<Combine> getCMList(){
