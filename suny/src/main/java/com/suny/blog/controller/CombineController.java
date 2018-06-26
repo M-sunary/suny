@@ -11,6 +11,13 @@ import javax.xml.ws.RequestWrapper;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 【套餐模块】
+ *
+ * @author yu.sun
+ * @content 套餐
+ * @date 2018/4/8 16:27
+ */
 @RestController
 @RequestMapping("/combine/")
 public class CombineController {

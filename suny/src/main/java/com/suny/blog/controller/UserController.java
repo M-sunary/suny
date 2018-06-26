@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 
 /**
- * Created by za-sunyu on 2017/7/6.
+ * 【用户Model处理器】模块
+ *
+ * @author yu.sun
+ * @content 用户controller
+ * @date 2018/4/8 16:27
  */
 @RestController
 @RequestMapping(value = "/users")

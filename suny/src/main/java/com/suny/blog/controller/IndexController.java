@@ -8,7 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by za-sunyu on 2017/7/10.
+ * 【用户首页】模块
+ *
+ * @author yu.sun
+ * @content 用户首页
+ * @date 2018/4/8 16:27
  */
 @Controller
 public class IndexController {

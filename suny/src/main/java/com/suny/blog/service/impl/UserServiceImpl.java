@@ -1,22 +1,19 @@
 package com.suny.blog.service.impl;
 
-import com.suny.blog.controller.GlobalExceptionHandler;
 import com.suny.blog.model.UserBaseInfo;
 import com.suny.blog.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
-import javax.validation.constraints.NotNull;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Created by za-sunyu on 2017/7/18.
+ * Created by yu.sun on 2017/7/18.
  */
 @Service
 public class UserServiceImpl implements UserService {

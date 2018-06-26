@@ -22,10 +22,12 @@ ${AnsiColor.BRIGHT_RED}
         \::/    /                        \::/____/                        \::/    /                                                     \::/____/
          \/____/                          ~~                               \/____/                                                       ~~
 
-==>> Application Version: ${application.version}${application.formatted-version}
+==>> Application Name: ${spring.application.name}
+==>> Application Current ENV: ${spring.profiles.active}
+==>> Application Version: ${application.version}${spring.application.formatted-version}
 ==>> Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
-==>> Current Author's Blog : ${application.blog-name}
-==>> Blog's Url : ${blog-url}
-==>> Github's Url : ${github-url}
+==>> Current Author's Blog : ${spring.application.blog-name}
+==>> Blog's Url : ${spring.application.blog-url}
+==>> Github's Url : ${spring.application.github-url}
 
 ========================================================================================================

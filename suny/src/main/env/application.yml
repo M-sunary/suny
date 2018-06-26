@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: prod
+  jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+---
+server:
+  port: 8900
+spring:
+  profiles: local
+---
+server:
+  port: 8900
+spring:
+  profiles: dev
+---
+server:
+  port: 8900
+spring:
+  profiles: stage
+---
+server:
+  port: 8900
+spring:
+  profiles: sandbox
+---
+server:
+  port: 8900
+spring:
+  profiles: prod
+---
+
+spring:
+  application:
+    name: my-expirence-site
+    formatted-version: 1.1.9.0
+    blog-name: M Suny
+    github-url: https://github.com/m-sunary
+    blog-url: http://sunary.site
+  thymeleaf:
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    content-type: text/html
+    #开发时关闭缓存,不然没法看到实时页面
+    cache: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/experience_site
+    username: root
+    password: Sunqwe!@#
+    driver-class-name: com.mysql.jdbc.Driver
