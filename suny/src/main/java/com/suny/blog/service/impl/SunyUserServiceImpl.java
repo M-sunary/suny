@@ -1,17 +1,14 @@
 package com.suny.blog.service.impl;
 
-import com.suny.blog.controller.GlobalExceptionHandler;
 import com.suny.blog.model.UserBaseInfo;
-import com.suny.blog.service.UserService;
+import com.suny.blog.service.SunyUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
-import javax.validation.constraints.NotNull;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -19,9 +16,9 @@ import java.sql.SQLException;
  * Created by za-sunyu on 2017/7/18.
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class SunyUserServiceImpl implements SunyUserService {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(SunyUserServiceImpl.class);
     @Autowired
     private JdbcTemplate jdbcTemplate;
 

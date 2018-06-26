@@ -1,7 +1,7 @@
 package com.suny.blog.controller;
 
 import com.suny.blog.model.UserBaseInfo;
-import com.suny.blog.service.UserService;
+import com.suny.blog.service.SunyUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
     @Autowired
-    private UserService userService;
+    private SunyUserService userService;
 
     @RequestMapping("/index")
     public String index(Model model){

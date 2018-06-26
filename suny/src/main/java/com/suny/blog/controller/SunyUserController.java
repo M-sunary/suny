@@ -1,6 +1,10 @@
 package com.suny.blog.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.freemud.shiro.ShiroApplication;
 import com.suny.blog.model.UserBaseInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,7 +18,8 @@ import java.util.*;
  */
 @RestController
 @RequestMapping(value = "/users")
-public class UserController {
+public class SunyUserController {
+    private Logger logger = LoggerFactory.getLogger(SunyUserController.class);
     //创建线程安全的map
     static Map<Integer,UserBaseInfo> users = Collections.synchronizedMap(new HashMap<Integer,UserBaseInfo>());
 
@@ -35,6 +40,13 @@ public class UserController {
                 break;
             }
         }
+
+        ShiroApplication shiroApplication = new ShiroApplication();
+        JSONObject user = new JSONObject();
+        user.put("username","mcd_master");
+        user.put("password","123456");
+        JSONObject loginRes = shiroApplication.sAuthLogin(user);
+        logger.info("登陆结果：{}",loginRes.toJSONString());
         return us;
     }
 

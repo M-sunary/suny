@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
  * Created by za-sunyu on 2017/7/18.
  */
 @ControllerAdvice
-public class GlobalExceptionHandler {
+public class SunyGlobalExceptionHandler {
 
     public static final String DEFAULT_ERROR_VIEW = "error";
-    private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(SunyGlobalExceptionHandler.class);
 
     @ExceptionHandler(value = Exception.class)
     public ModelAndView defaultErrorHandler(HttpServletRequest request,Exception e) throws Exception{
