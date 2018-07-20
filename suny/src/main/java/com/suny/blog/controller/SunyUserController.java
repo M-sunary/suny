@@ -1,8 +1,8 @@
 package com.suny.blog.controller;
 
-import com.alibaba.fastjson.JSONObject;
-import com.freemud.shiro.ShiroApplication;
 import com.suny.blog.model.UserBaseInfo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 
 /**
- * Created by za-sunyu on 2017/7/6.
+ * Created by yu.sun on 2017/7/6.
  */
+@Api(description = "用户操作接口")
 @RestController
 @RequestMapping(value = "/users")
 public class SunyUserController {
@@ -24,6 +25,7 @@ public class SunyUserController {
     static Map<Integer,UserBaseInfo> users = Collections.synchronizedMap(new HashMap<Integer,UserBaseInfo>());
 
 
+    @ApiOperation(value = "用户列表接口")
     @RequestMapping(value = "/user_list",method = RequestMethod.GET)
     public UserBaseInfo getUserList(@RequestParam(value = "name") String name){
         // 处理"/users/"的GET请求，用来获取用户列表
@@ -40,13 +42,6 @@ public class SunyUserController {
                 break;
             }
         }
-
-        ShiroApplication shiroApplication = new ShiroApplication();
-        JSONObject user = new JSONObject();
-        user.put("username","mcd_master");
-        user.put("password","123456");
-        JSONObject loginRes = shiroApplication.sAuthLogin(user);
-        logger.info("登陆结果：{}",loginRes.toJSONString());
         return us;
     }
 
